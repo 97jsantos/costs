@@ -1,0 +1,97 @@
+{
+  "projects": [
+    {
+      "name": "Projeto infra",
+      "budget": "1111",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 660,
+      "services": [
+        {
+          "name": "Infra 01",
+          "cost": "100",
+          "description": "Primeiro serviço",
+          "id": "b9560ca9-6cba-480c-806b-0f60e59ad664"
+        },
+        {
+          "name": "Infra 02",
+          "cost": "120",
+          "description": "Segundo serviço",
+          "id": "82a4029d-c260-4afd-a1fa-c69b12cd1556"
+        },
+        {
+          "name": "Infra 03",
+          "cost": "130",
+          "description": "Terceiro serviço",
+          "id": "39cc69bb-90d7-41a9-b792-1c28a5a0bdcc"
+        },
+        {
+          "name": "Infra 04",
+          "cost": "150",
+          "description": "Quarto serviço",
+          "id": "2f24ff66-9f41-4695-8a8c-c9c039017294"
+        },
+        {
+          "name": "Infra 05",
+          "cost": "160",
+          "description": "Quinto serviço",
+          "id": "af19cfd3-8611-45cc-b4d9-672b4b4edda7"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Projeto Desenvolvimento",
+      "budget": "2222",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 2
+    },
+    {
+      "name": "Projeto Design",
+      "budget": "3333",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 3
+    },
+    {
+      "name": "Projeto Planejamento",
+      "budget": "4444",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    }
+  ]
+}
