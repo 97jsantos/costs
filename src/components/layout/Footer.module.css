@@ -6,6 +6,7 @@
 }
 
 .social_list {
+    padding: 0;
     display: flex;
     justify-content: center;
     list-style-type: none;

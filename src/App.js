@@ -7,13 +7,13 @@ import NewProject from "./components/pages/NewProject";
 import Project from "./components/pages/Project";
 
 import Container from "./components/layout/Container";
-import Navbar from "./components/layout/Navbar";
+import Navigation from "./components/layout/Navigation";
 import Footer from "./components/layout/Footer";
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
+    <Navigation/>
       <Container customClass='min_height'>
         <Routes>
           <Route exact path="/" element={<Home/>}>

@@ -9,3 +9,19 @@ html, body, #root {
   background-color: #efefef;
   height: 100%;
 }
+
+.menubtn {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+.menubtn:hover {
+  color: #ffbb33;
+  transition: .3s;
+}
+
+.menubtn.active {
+  color: #ffbb33;
+}
