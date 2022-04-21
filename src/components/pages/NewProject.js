@@ -13,7 +13,7 @@ function NewProject() {
         project.cost = 0
         project.services = []
 
-        fetch("http://localhost:5000/projects", {
+        fetch("https://jsantos97-costs.herokuapp.com/projects", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
