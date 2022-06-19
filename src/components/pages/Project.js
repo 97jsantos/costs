@@ -1,11 +1,10 @@
-import { parse, v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 
 import styles from './Project.module.css'
 
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-import Loading from '../layout/Loading'
 import ProjectForm from '../project/ProjectForm'
 import ServiceForm from '../service/ServiceForm'
 import Message from '../layout/Message'
@@ -23,8 +22,7 @@ function Project() {
     const [type, setType] = useState()
 
     useEffect(() => {
-        setTimeout(() => {
-            fetch(`https://jsantos97-costs.herokuapp.com/projects/${id}`, {
+            fetch(`http://localhost:5000/projects/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type' : 'application/json',
@@ -36,7 +34,6 @@ function Project() {
                 setServices(data.services)
             })
             .catch((err) => console.log)
-            }, 300)
     }, [id])
 
     function editPost(project) {
@@ -50,7 +47,7 @@ function Project() {
             return false
         }
 
-        fetch(`https://jsantos97-costs.herokuapp.com/projects/${id}`, {
+        fetch(`http://localhost:5000/projects/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -60,6 +57,7 @@ function Project() {
         .then((resp) => resp.json())
         .then((data) => {
             setProject(data)
+            console.log(data)
             setShowProjectForm(false)
             setMessage('Projeto atualizado!')
             setType('success')
@@ -82,7 +80,7 @@ function Project() {
 
         //maximum value validation
         if(newCost > parseFloat(project.budget)) {
-            setMessage('Orçamento ultrapassado, verigique o valor do serviço')
+            setMessage('Orçamento ultrapassado, verifique o valor do serviço')
             setType('error')
             project.services.pop()
             return false
@@ -92,7 +90,7 @@ function Project() {
         project.cost = newCost
 
         // update project
-        fetch(`https://jsantos97-costs.herokuapp.com/projects/${project.id}`, {
+        fetch(`http://localhost:5000/projects/${project.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -116,7 +114,7 @@ function Project() {
         projectUpdated.services = servicesUpdated
         projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
 
-        fetch(`https://jsantos97-costs.herokuapp.com/projects/${projectUpdated.id}`, {
+        fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -142,7 +140,7 @@ function Project() {
 
     return (
         <>
-            {project.name ? (
+            {project.name && (
                 <div className={styles.project_details}>
                     <div>
                         {message && <Message type={type} msg={message}/>}
@@ -199,14 +197,11 @@ function Project() {
                                         handleRemove={removeService}
                                     />
                                 ))
-                            
                             }
                             {services.length === 0 && <p>Não há serviços cadastrados.</p> }
                         </div>
                     </div>
                 </div> 
-            ) : ( 
-                <Loading/>
             )}
         </>
     )
