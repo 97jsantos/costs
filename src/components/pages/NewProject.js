@@ -13,7 +13,7 @@ function NewProject() {
         project.cost = 0
         project.services = []
 
-        fetch(`https://jsantos97-costs.herokuapp.com/projects`, {
+        fetch(`https://costs-project-api.herokuapp.com/projects`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
