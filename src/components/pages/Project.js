@@ -22,7 +22,7 @@ function Project() {
     const [type, setType] = useState()
 
     useEffect(() => {
-            fetch(`http://localhost:5000/projects/${id}`, {
+            fetch(`https://jsantos97-costs.herokuapp.com/projects/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type' : 'application/json',
@@ -47,7 +47,7 @@ function Project() {
             return false
         }
 
-        fetch(`http://localhost:5000/projects/${id}`, {
+        fetch(`https://jsantos97-costs.herokuapp.com/projects/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -90,7 +90,7 @@ function Project() {
         project.cost = newCost
 
         // update project
-        fetch(`http://localhost:5000/projects/${project.id}`, {
+        fetch(`https://jsantos97-costs.herokuapp.com/projects/${project.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -114,7 +114,7 @@ function Project() {
         projectUpdated.services = servicesUpdated
         projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
 
-        fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+        fetch(`https://jsantos97-costs.herokuapp.com/projects/${projectUpdated.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'

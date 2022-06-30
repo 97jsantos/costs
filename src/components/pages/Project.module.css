@@ -28,6 +28,7 @@
 .services_layout {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn {

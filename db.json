@@ -1,35 +1,5 @@
 {
-  "projects": [
-    {
-      "name": "Teste 01",
-      "budget": "112",
-      "category": {
-        "id": "1",
-        "name": "infra"
-      },
-      "cost": 111,
-      "services": [
-        {
-          "name": "ttt",
-          "cost": "111",
-          "description": "aaa",
-          "id": "7b38e15e-2100-46e6-9803-9831bd4188b5"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "name": "teste 01",
-      "budget": "1111",
-      "category": {
-        "id": "2",
-        "name": "desenvolvimento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 2
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": 1,
